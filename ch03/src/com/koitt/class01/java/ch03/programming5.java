@@ -7,14 +7,14 @@ public class programming5 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("³âµµ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ë…„ë„ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		
 		int a = input.nextInt();
 
 		
 			if (a%4==0) {
 				if (a%400 == 0) {
-					System.out.println("À±³âÀÔ´Ï´Ù.");
+					System.out.println("ìœ¤ë…„ì…ë‹ˆë‹¤.");
 				}
 			}
 				

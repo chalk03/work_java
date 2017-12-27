@@ -7,7 +7,7 @@ public class programming6 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Ãµ¸¸ ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ì²œë§Œ ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		int a = input.nextInt();
 		
 		int man = a/10000;
@@ -17,9 +17,9 @@ public class programming6 {
 		int il = a%10;
 		
 		if (a <= 10000000) {
-			System.out.printf("%d¸¸ %dÃµ %d¹é %d½Ê %d ÀÔ´Ï´Ù.", man,chun, beak, sip, il );
+			System.out.printf("%dë§Œ %dì²œ %dë°± %dì‹­ %d ì…ë‹ˆë‹¤.", man,chun, beak, sip, il );
 		}
 		else 
-			System.out.println("¶È¹Ù·Î ÀĞ°í Ãµ¸¸ ÀÌÇÏÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇØ.");
+			System.out.println("ë˜‘ë°”ë¡œ ì½ê³  ì²œë§Œ ì´í•˜ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•´.");
 	}
 }

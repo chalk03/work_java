@@ -7,15 +7,15 @@ public class programming01 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("µÎ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ë‘ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		
 		int a = (int)input.nextDouble();
 		int b = (int)input.nextDouble();
 		double sum = a+b;
 		double som = sum / 2;
 		
-		System.out.printf("ÇÕ°è : %f", sum);
-		System.out.printf("Æò±Õ : %f", som);		
+		System.out.printf("í•©ê³„ : %f", sum);
+		System.out.printf("í‰ê·  : %f", som);		
 				
 
 		

@@ -7,7 +7,7 @@ public class programming04 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("¿Âµµ¿Í ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ì˜¨ë„ì™€ ë¬¸ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		
 		
 		String a = input.next();
@@ -20,7 +20,7 @@ public class programming04 {
 		
 		double s = (5.0 / 9.0)*(b - 32);
 		
-		System.out.printf("¼·¾¾ : %f", s);
+		System.out.printf("ì„­ì”¨ : %f", s);
 		break;
 		
 			case "C" :  
@@ -28,10 +28,10 @@ public class programming04 {
 		
 		double h = (9.0 / 5.0)*b +32;
 				
-		System.out.printf("È­¾¾ : %f", h);
+		System.out.printf("í™”ì”¨ : %f", h);
 		
 		default:
-			System.out.printf("±Û ÀßÀĞ°í ´Ù½Ã ÀÔ·ÂÇØ ¶ì¶ì");
+			System.out.printf("ê¸€ ì˜ì½ê³  ë‹¤ì‹œ ì…ë ¥í•´ ë ë ");
 		
 	}
 }

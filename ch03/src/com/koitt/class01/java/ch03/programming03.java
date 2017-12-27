@@ -7,7 +7,7 @@ public class programming03 {
 	public static void main(String[] args) {
 		Scanner p = new Scanner(System.in);
 		
-		System.out.println("¹«°Ô¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ë¬´ê²Œë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
 		double a = p.nextDouble();
 		double pp = a/0.453592;
 

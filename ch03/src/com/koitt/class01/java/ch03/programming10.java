@@ -7,7 +7,7 @@ public class programming10 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("ÁöºÒÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ì§€ë¶ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš”.");
 		int m = scan.nextInt();
 		
 		
@@ -16,7 +16,7 @@ public class programming10 {
 		int ochun = (m - (oman*50000 + man*10000)) / 5000;
 		int chun = (m - (oman*50000 + man*10000 + ochun*5000)) / 1000;
 		
-		System.out.printf("5¸¸¿ø±Ç %dÀå ¸¸¿ø±Ç %dÀå 5Ãµ¿ø±Ç %dÀå Ãµ¿ø±Ç %dÀå", oman, man, ochun, chun);
+		System.out.printf("5ë§Œì›ê¶Œ %dì¥ ë§Œì›ê¶Œ %dì¥ 5ì²œì›ê¶Œ %dì¥ ì²œì›ê¶Œ %dì¥", oman, man, ochun, chun);
 		
 	}
 }

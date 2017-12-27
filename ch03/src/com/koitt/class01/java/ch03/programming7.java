@@ -7,19 +7,19 @@ public class programming7 {
 	public static void main(String[] args) {
 		Scanner month = new Scanner(System.in);
 		
-		System.out.println("╢чю╩ ют╥бго╪╪©Д.");
+		System.out.println("К▀╛Л²└ Л·┘К═╔М∙≤Л└╦Л ■.");
 		int m = month.nextInt();
 		
 /*		if (m > 0 && m <= 6) {
-			System.out.printf("%d©Ыю╨ ╩С╧щ╠Б ют╢о╢ы.", m);
+			System.out.printf("%dЛ⌡■Л²─ Л┐│К╟≤Й╦╟ Л·┘К▀┬К▀╓.", m);
 		}
 		else if (m >= 7 && m <= 12) {
-			System.out.printf("%d©Ыю╨ го╧щ╠Б ют╢о╢ы.", m);
+			System.out.printf("%dЛ⌡■Л²─ М∙≤К╟≤Й╦╟ Л·┘К▀┬К▀╓.", m);
 		}
 		else 
-			System.out.println("юъ╦Ь ют╥бго╪л╫ю╢о╢ы.");*/
+			System.out.println("Л·≤К╙╩ Л·┘К═╔М∙≤Л┘╗Л┼╣К▀┬К▀╓.");*/
 		
-		System.out.println(m >= 6 ? "╩С╧щ╠Б" : "го╧щ╠Б");
+		System.out.println(m >= 6 ? "Л┐│К╟≤Й╦╟" : "М∙≤К╟≤Й╦╟");
 		}
 		
 		
