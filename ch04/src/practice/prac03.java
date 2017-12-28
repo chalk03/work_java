@@ -10,11 +10,12 @@ public class prac03 {
 		System.out.println("수를 입력하세요.");
 		int a = input.nextInt();
 		
-		int result = a%10*10+a/10;
+		
 		do {
-			System.out.print(result);
+
+			System.out.print(a%10);
+			a = a/10;
 		}
-		while ( a < 0);
-		System.out.println();
+		while ( a > 0);
 	}
 }

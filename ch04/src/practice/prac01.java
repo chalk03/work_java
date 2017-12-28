@@ -3,18 +3,16 @@ package practice;
 public class prac01 {
 
 	public static void main(String[] args) {
-		int i = 1;
-		int count = 1;
-		for ( i =1; i<100; i++ ) {
+		int count = 0;
+		for (int i =1; i<=100; i++ ) {
 			if (i%2==0 || i%3==0 || i%5==0 || i%7==0 ) continue;
-
-			else if (count%10==0) {
-			System.out.println(i);
-			count++;
-			continue;
+				System.out.print(i + " ");
+				count++;
+			
+				if (count == 10) {
+					System.out.println();
+					count = 0;
 			}
-			System.out.print(i + " ");
-			++count;
 		}
 	}
 }
