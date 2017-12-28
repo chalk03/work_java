@@ -1,21 +1,24 @@
-
-
 package practice;
 
 public class prac01 {
 
 	public static void main(String[] args) {
-		int num = 0;
-		for (int i = 1; i<= 100; i++) {
-			if (i%2 == 0 || i%3==0 || i%5==0 || i%7==0) {
+		int i = 1;
+		int count = 1;
+		for ( i =1; i<100; i++ ) {
+			if (i%2==0 || i%3==0 || i%5==0 || i%7==0 ) continue;
+
+			else if (count%10==0) {
+			System.out.println(i);
+			count++;
+			continue;
 			}
-			else {
-			System.out.print(i+ " ");
-			num++;
-			}
-			if(num%10 ==0) {
-				System.out.println();
-			}
+			System.out.print(i + " ");
+			++count;
 		}
 	}
 }
+
+		
+
+
