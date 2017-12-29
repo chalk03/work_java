@@ -6,10 +6,10 @@ public class prac07 {
 		int n = 0;
 		int sum = 0;
 		
-		do {
-			sum += ++n;
+		while (sum < 5000) {
+			n++;
+			sum += n;
 		}
-		while (sum < 5000 );
-		System.out.printf("1부터 n까지의 합 중 5000을 넘지 않는 가장 큰합은 : %d입니다." );
+		System.out.printf("가장 큰합: %d, 그때 n 값 : %d", sum-n, --n);
 	}
 }
