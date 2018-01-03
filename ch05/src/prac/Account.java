@@ -43,16 +43,16 @@ public class Account {
 	public long withdraw(long amount) {
 		balance -= amount; 
 
-		if (amount > balance) {
-		System.out.println("잔액이 부족합니다.");
+		if (amount >= balance) {
+		System.err.println("잔액이 부족합니다.");
 			return getBalance();
 		}
-		return 0;
+		return amount;
 	}
 
 	public static void main(String[] args) {
 		Account myMoney = new Account();
 		System.out.print("입금액: " + myMoney.deposit(100000));
-		System.out.print("인출액: " + myMoney.withdraw(50000));
+		System.out.print("인출액: " + myMoney.withdraw(100000));
 	}
 }
