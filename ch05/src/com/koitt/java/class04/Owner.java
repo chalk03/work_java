@@ -42,23 +42,15 @@ public Owner(String name, Car[] car) {
 		}
 	}
 	public static void main(String[] args) {
-		Car[] car2 = new Car[3];
-		car2[0] = new Car("포르쉐1호", 100);
-		car2[1] = new Car("포르쉐2호", 200);
-		car2[2] = new Car("포르쉐3호", 300);
-		
+
 		Car[] car3 = new Car[3];
 		car3[0] = new Car("부가티1호", 100);
 		car3[1] = new Car("부가티2호", 200);
 		car3[2] = new Car("부가티3호", 300);
 
-		//Car[] cars = new Car[](car2, 500);
 		Owner nm = new Owner("홍길동", car3);
 		nm.setCar(car3);
-		nm.introCar();
-	
-		
-		
+		nm.introCar();	
 	}	
 }
 

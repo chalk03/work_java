@@ -11,8 +11,8 @@ public class SalaryMan {
 		this.salary = salary;
 	}
 	
-	public int getAnnualGross() {
-		return salary * 5;
+		int getAnnualGross() {
+		return salary * 12 + salary * 5;
 	}
 	
 	public static void main(String[] args) {

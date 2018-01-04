@@ -1,10 +1,10 @@
+
 package prac;
 
 public class Rectangle {
 	
 	double x;
 	double y;
-	double rc;
 
 	public Rectangle(double x, double y) {
 		this.x = x;

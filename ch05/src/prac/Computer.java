@@ -2,14 +2,16 @@ package prac;
 
 public class Computer {
 	
-	int a;
-	int b;
+	public static final String[] osType = {"윈도7", "애플 OS X", "안드로이드"};
+	
+	int a;	// os타입
+	int b;	// 메모리
+	
 	
 	public Computer(int a, int b) {
 		this.a = a;
 		this.b = b;
 	}
-	public static final String[] osType = {"윈도7", "애플 OS X", "안드로이드"};
 	
 	public void print() {
 
