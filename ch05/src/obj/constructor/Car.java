@@ -45,12 +45,12 @@ public class Car {
 		
 		// 최대 속도보다 같거나 작다면 현재 속도를 갱신
 		this.speed = tempSpeed;
-		
 		return this.speed;
 	}
 	public int speedDown() {
 		int tempSpeed = this.speed;
 		tempSpeed -= 20;
+		
 		
 		if ( tempSpeed < 0 ) {
 			return 0;
@@ -71,8 +71,8 @@ public class Car {
 	
 	public static void main(String[] args) {
 		Car mycar = new Car("포르쉐", 300);
-		//mycar.speedUp();
-		//mycar.speedUp();
+		mycar.speedUp();
+		mycar.speedUp();
 		System.out.print("차종: " + mycar.brandName);
 		System.out.print(", 최고 속도: " + mycar.getMaxSpeed());
 		System.out.println(", 현재 속도: " + mycar.speedDown());

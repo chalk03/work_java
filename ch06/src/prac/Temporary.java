@@ -4,6 +4,7 @@ public class Temporary extends Employee {
 
 	private int WorkHours;
 	private int pay = 10000;
+	private int WorkPay;
 	
 	public Temporary() {}
 	
@@ -12,8 +13,9 @@ public class Temporary extends Employee {
 			super(name, age, adress, department);
 		}
 
-		public void setWorkHours(int WorkHours) {
+		public int setWorkHours(int WorkHours) {
 			this.WorkHours = WorkHours;
+			return WorkPay = WorkHours * pay;
 		}
 		
 	
@@ -22,31 +24,18 @@ public class Temporary extends Employee {
 			System.out.println("주소는 " + super.adress + "입니다.");
 			System.out.println("부서는 " + super.department + "입니다.");
 			System.out.println("저는 " + this.name + "입니다.");
-			System.out.println("월급은 " + pay + "원 입니다.");
+			System.out.println("월급은 " + WorkPay + "원 입니다.");
 		}
 		
-		/*public static void main(String[] args) {
+		public static void main(String[] args) {
 			Temporary your = new Temporary();
 			your.name = "비정규직";
 			your.setWorkHours(209);
-			your.setPay(10000);
 			your.printInfo();
-		}*/
-		
-		public static void main(String[] args) {
-			Regular r = new Regular("이순신", 35, "서울", "인사부");
-			Temporary t = new Temporary("장보고", 25, "인천", "경리부");
-			r.setSalary(5000000);
-			r.printInfo();
-			//t.setWorkHours(120);
-			t.printInfo();
 		}
+		
+		
 
 		
-		
-		
 	
-		
-		
-		
 }

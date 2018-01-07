@@ -40,12 +40,14 @@ public class Employee {
 	}
 	
 	public static void main(String[] args) {
-		Employee me = new Employee();
+		
+		
+		/*Employee me = new Employee();
 		me.name = "강동민";
 		me.age = 28;
 		me.adress = "인천";
 		me.department = "SI사업부";
-		me.printInfo();
+		me.printInfo();*/
 	}
 	
 	
