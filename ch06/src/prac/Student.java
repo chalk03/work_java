@@ -46,7 +46,8 @@ public class Student extends Person{
 		System.out.println("8학기 학점을 순서대로 입력하세요");
 		
 		for(int i = 0; i < me.data.length; i++) {
-			System.out.print((i+1) + "학기 학점 -> ");
+			System.out.println((i+1) + "학기 학점 -> ");
+			me.data[i] = scanner.nextDouble();
 		}
 
 		System.out.println("--------------------------");
