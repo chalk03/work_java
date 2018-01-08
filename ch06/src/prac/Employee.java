@@ -3,13 +3,45 @@ package prac;
 public class Employee {
 	
 	// 1-1 필드: 이름, 나이, 주소, 부서, 월급 정보를 필드로 선언
-	String name;
-	int age;
-	String adress;
-	String department;
-	int salary;
+	private String name;
+	private int age;
+	private String adress;
+	private String department;
+	private int salary;
 	
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
 	
 	//2-1번
 	public int getSalary() {
@@ -38,19 +70,6 @@ public class Employee {
 		System.out.println("주소는 " + adress);
 		System.out.println("부서는 " + department);
 	}
-	
-	public static void main(String[] args) {
-		
-		
-		/*Employee me = new Employee();
-		me.name = "강동민";
-		me.age = 28;
-		me.adress = "인천";
-		me.department = "SI사업부";
-		me.printInfo();*/
-	}
-	
-	
-	
+	public void setWorkHours(int WorkHours) {}
 	
 }

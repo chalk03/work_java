@@ -1,6 +1,5 @@
 package prac;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student extends Person{
@@ -9,12 +8,7 @@ public class Student extends Person{
 	String univ;
 	String subject;
 	int id;
-	double[] data = new double[8];
-	double sum;
-	double avg;
-
-
-	public Student() {}
+	double[] data;
 
 	// 생성자 학교명,학과,학번 지정
 	public Student(String name, int age, String address, String univ, String subject, int id) {
@@ -22,70 +16,41 @@ public class Student extends Person{
 		this.univ = univ;
 		this.subject = subject;
 		this.id = id;
+		this.data = new double[8];
 	}
 
 	// 메소드 averager(): 8개 학기 평균평점의 평균을 반환
-	public double averager() 
-	{
+	public double average() {
+		double sum = 0;
+		for ( int i = 0; i<data.length; i++) {
+			sum += data[i];
+		}
+			return sum / data.length;
 	}
 
-	public void printInfo() {
-		System.out.println("이름 : " + name);
-		System.out.println("나이 : " + age);
-		System.out.println("주소 : " + address);
-		System.out.println("학교 : " + univ);
-		System.out.println("학과 : " + subject);
-		System.out.println("학번 : " + id);
-		System.out.println("-----------------------------");
-	}
 
-	public double output(double score) {
-		Scanner input = new Scanner(System.in);
-		double a,b,c,d,e,f,g,h;
 
-		System.out.println("8학기 학점을 순서대로 입력하세요");
-
-		System.out.print("1학기 학점 -> ");
-		a = input.nextDouble();
-
-		System.out.print("2학기 학점 -> ");
-		b = input.nextDouble();
-
-		System.out.print("3학기 학점 -> ");
-		c = input.nextDouble();
-
-		System.out.print("4학기 학점 -> ");
-		d = input.nextDouble();
-
-		System.out.print("5학기 학점 -> ");
-		e = input.nextDouble();
-
-		System.out.print("6학기 학점 -> ");
-		f = input.nextDouble();
-
-		System.out.print("7학기 학점 -> ");
-		g = input.nextDouble();
-
-		System.out.print("8학기 학점 -> ");
-		h = input.nextDouble();
-
-		System.out.println("-----------------------------");
-		
-		//System.out.printf("8학기 총 평균 평점은 %f점 입니다.", );
-		return 0;
-	}
 
 	public static void main(String[] args) {
+		Student me = new Student("김다정", 20, "서울시 관악구", "동양서울대학교", "전산정보학과", 2013222);
+		System.out.println("이름 : " + me.name);
+		System.out.println("나이 : " + me.age);
+		System.out.println("주소 : " + me.address);
+		System.out.println("학교 : " + me.univ);
+		System.out.println("학과 : " + me.subject);
+		System.out.println("학번 : " + me.id);
+		
+		System.out.println("--------------------------");
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("8학기 학점을 순서대로 입력하세요");
+		
+		for(int i = 0; i < me.data.length; i++) {
+			System.out.print((i+1) + "학기 학점 -> ");
+		}
 
-
-		Student me = new Student();
-		me.name = "김다정";
-		me.age = 20;
-		me.address = "서울시 관악구";
-		me.univ = "동양서울대학교";
-		me.subject = "전산정보학과";
-		me.id = 20132222;
-		me.printInfo();
-		me.output();
+		System.out.println("--------------------------");
+		
+		System.out.println(me.data.length + "학기 총 평균 평점은 " + me.average() + "점 입니다.");
 	}
 }
