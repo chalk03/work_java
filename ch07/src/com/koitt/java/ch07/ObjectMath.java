@@ -7,7 +7,7 @@ public class ObjectMath {
 		System.out.println(obj.getClass());	// 클래스의 전체 이름
 		System.out.println(obj.hashCode());	// 가짜 주소값
 		System.out.println(obj.toString());	// 직접 가서 살펴보기
-		
+		                 
 		System.out.println(Math.PI);
 		System.out.println(Math.round(-3.5));
 		System.out.println(Math.abs(-3.4));
