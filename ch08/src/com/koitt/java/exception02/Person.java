@@ -1,5 +1,6 @@
 package com.koitt.java.exception02;
 
+// 모델 (Model), VO(Value Object), DTO(Data Transfer Object)
 public class Person {
 
 	private String name;
@@ -27,6 +28,27 @@ public class Person {
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		// 1. 주소값 비교
+		if (this == obj) {
+			return true;
+		}
+
+		// 2. Person 클래스를 상속 받았는지 검사
+		if (!(obj instanceof Person)) {
+			return false;
+		}
+
+		// 3. Person의 name 필드값끼리 비교
+		Person p = (Person) obj;
+		if (this.name.equals(p.name)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Person [name=");
@@ -36,6 +58,5 @@ public class Person {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
+
 }
