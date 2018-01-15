@@ -24,11 +24,12 @@ public class PersonController {
 			System.out.println("=== 인적사항 관리 프로그램 ===");
 			System.out.println("1. 인적사항 입력");
 			System.out.println("2. 인적사항 전체출력");
-			System.out.println("3. 프로그램 종료");
+			System.out.println("3. 인적사항 삭제");
+			System.out.println("4. 프로그램 종료");
 			System.out.print("메뉴번호 입력 > ");
 
 			// 입력받은 메뉴번호
-			int menu = input.nextInt();
+			int menu = Integer.parseInt(input.nextLine()); // 한 줄 단위로 입력받음(String타입)
 
 			switch (menu) {
 			case 1:
@@ -38,12 +39,18 @@ public class PersonController {
 			case 2:
 				controller.menuRead();
 				break;
-
+				
 			case 3:
+				controller.menuRemove();
+				break;
+
+			case 4:
 				System.out.println("프로그램 종료하겠습니다. 안녕히 계세요~");
 				System.exit(0); // 프로그램 종료, 0: 정상종료, -1: 비정상종료
 				// exit의 숫자는 운영체제가 사용
 				break;
+				
+			
 
 			default:
 				System.out.println("메뉴 번호를 잘못 입력하셨습니다.");
@@ -52,14 +59,20 @@ public class PersonController {
 	}
 
 	public void menuAdd() {
-		System.out.println("=== 사람 정보를 입력해 주세요 (quit: 종료) ===");
+		System.out.println("=== 사람 정보를 입력해 주세요 ===");
 
 		System.out.print("이름: ");
-		String name = this.input.next();
+		String name = this.input.nextLine(); // 한 줄 입력받음
 
 		System.out.print("나이: ");
-		int age = this.input.nextInt();
-
+		Integer age = null;
+		try {
+			age = Integer.parseInt(this.input.nextLine()); // 한 줄 입력받음
+		}
+		catch (NumberFormatException e) {
+			System.out.println("숫자만 입력해주세요.");
+			return;
+		}
 		// 입력받은 정보를 객체화
 		Person p = new Person(name, age);
 
@@ -82,5 +95,23 @@ public class PersonController {
 		for (Person item : list) {
 			System.out.println(item);
 		}
+	}
+	
+	public void menuRemove() {
+		System.out.println("=== 삭제할 사람 정보를 입력해 주세요 ===");
+
+		System.out.print("이름: ");
+		String name = this.input.nextLine(); // 한 줄 입력받음
+		
+		Person p = new Person(name, null);
+		
+		try {
+			service.remove(p);
+			System.out.println(p.getName() + "님이 삭제되었습니다.");
+		}
+		catch(MyException e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 }
