@@ -42,7 +42,19 @@ public class PersonDao {
 				return;
 			}
 		}
-		
+
 		throw new MyException("E02: 삭제할 사람이 없습니다.");
+	}
+
+	public void update(Person p) throws MyException{
+		// list에서 Argument로 전달받은 객체의 name과 동일한 객체가 있는지 확인
+		for (Person item : this.list) {
+			if (item.equals(p)) {
+				item.setAge(p.getAge());
+				return;
+			}
+		}
+		
+		throw new MyException("E03: 수정할 사람이 없습니다.");
 	}
 }
