@@ -5,14 +5,16 @@ import java.util.List;
 public class BoardService {
 
 	private BoardDao dao;
-	private Integer count;
+	private int count;
 
+	
 	public BoardService() {
 		this.dao = new BoardDao();
 	}
 
 	public void add(Board b) throws BoardException {
-		dao.insert(b);
+		Board board = new Board(++count, b.getTitle(), b.getContent(), b.getWriter(), b.getRegDate());
+		dao.insert(board);
 	}
 
 	public List<Board> read() {

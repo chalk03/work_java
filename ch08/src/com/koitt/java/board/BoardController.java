@@ -11,7 +11,6 @@ public class BoardController {
 
 	public BoardController() {
 		this.service = new BoardService();
-
 		this.input = new Scanner(System.in);
 	}
 
@@ -30,9 +29,9 @@ public class BoardController {
 
 			int menu = -1;
 			try {
-				menu = Integer.parseInt(input.nextLine()); // 한 줄 단위로 입력받음(String타입)
+				menu = Integer.parseInt(input.nextLine());
 			} catch (NumberFormatException e) {
-				System.out.println("메뉴는 숫자로만 입력하세요.");
+				System.out.println("메뉴는 숫자로만 입력해");
 				continue;
 			}
 
@@ -51,13 +50,11 @@ public class BoardController {
 
 			case 4:
 				controller.menuModify();
-				;
 				break;
 
 			case 5:
 				System.out.println("게시판 나가기.");
-				System.exit(0); // 프로그램 종료, 0: 정상종료, -1: 비정상종료
-				// exit의 숫자는 운영체제가 사용
+				System.exit(0);
 				break;
 
 			default:
@@ -68,25 +65,31 @@ public class BoardController {
 
 	public void menuAdd() {
 		System.out.println("=== 게시글 정보를 입력해 주세요 ===");
-
+		
+		/*System.out.print("글 번호: ");
+		Integer id = Integer.parseInt(this.input.nextLine()); // 글번호 입력
+*/
 		System.out.print("제목: ");
-		String title = this.input.nextLine(); // 입력받음
+		String title = this.input.nextLine(); // 글 제목 입력
 
 		System.out.print("내용: ");
-		String content = this.input.nextLine(); // 입력받음.
+		String content = this.input.nextLine(); // 글 내용 입력
 
 		System.out.print("작성자: ");
-		String writer = this.input.nextLine(); // 입력받음
+		String writer = this.input.nextLine(); // 글 작성자 입력
 
 		Date regData = new Date(); // 작성한 시간을 저장
 
 		// 입력받은 정보를 객체화
 		Board b = new Board(0, title, content, writer, regData);
-
+		
 		// Service로 입력받은 게시글 객체를 전달 (추가)
+		/*this.service.add(b);
+		System.out.println("게시글이 작성되었습니다.");*/
+		
 		try {
 			this.service.add(b);
-			System.out.println("입력완료!!");
+			System.out.println("게시글이 작성되었습니다.");
 		} catch (BoardException e) {
 			System.out.println(e.getMessage());
 		}
@@ -111,7 +114,7 @@ public class BoardController {
 
 		// 삭제할 게시글 번호 입력
 		System.out.print("번호: ");
-		Integer id = this.input.nextInt();
+		int id = Integer.parseInt(this.input.nextLine());
 
 		Board b = new Board(id, null, null, null, null);
 
@@ -129,7 +132,7 @@ public class BoardController {
 
 		// 수정할 게시글 번호 입력
 		System.out.print("게시글 번호: ");
-		Integer id = this.input.nextInt();
+		int id = Integer.parseInt(this.input.nextLine());
 
 		// 게시글 제목 변경
 		System.out.print("제목: ");

@@ -17,6 +17,9 @@ public class Board {
 	private String writer; // 작성자
 	private Date regDate; // 작성일
 
+	public Board() {
+	}
+
 	public Board(int id, String title, String content, String writer, Date regDate) {
 		this.id = id;
 		this.title = title;
@@ -66,6 +69,19 @@ public class Board {
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((content == null) ? 0 : content.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((regDate == null) ? 0 : regDate.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		result = prime * result + ((writer == null) ? 0 : writer.hashCode());
+		return result;
+	}
+
+
+	@Override
 	public boolean equals(Object obj) {
 		// 1. 주소값 비교
 		if (this == obj) {
@@ -102,5 +118,4 @@ public class Board {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }
