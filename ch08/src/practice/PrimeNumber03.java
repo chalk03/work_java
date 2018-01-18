@@ -7,19 +7,17 @@ public class PrimeNumber03 implements Runnable {
 	public PrimeNumber03(int end) {
 		this.end = end;
 	}
-
+	
 	public void run() {
 		System.out.println(Thread.currentThread().getName());
-		boolean b;
 		for (int i = 2; i <= this.end; i++) {
-			b = true;
-			for (int j = 2; j < i; j++) {
-				if (i % j == 0) {
-					b = false;
+			for (int j = 2; j <= i; j++) {
+				if (!(i == j) && i % j == 0) {
+					break;
 				}
-			}
-			if (b == true) {
-				System.out.print(i + " ");
+				if (i == j) {
+					System.out.printf("%4d", i);
+				}
 			}
 		}
 	}

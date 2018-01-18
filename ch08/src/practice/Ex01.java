@@ -6,11 +6,9 @@ public class Ex01 {
 
 	public static void main(String[] args) {
 		int x = 0, y = 0, z = 0;
-		
+		System.out.println("정수 두 개를 입력하세요오오오오옹: ");
 		while (true) {
 			
-			System.out.println("정수 두 개를 입력하세요오오오오옹: ");
-
 			try {
 				Scanner input = new Scanner(System.in);
 				x = input.nextInt();
@@ -20,7 +18,7 @@ public class Ex01 {
 				break;
 
 			} catch (Exception e) {
-				System.out.println("예외 발생: " + e);
+				System.out.println("정수만을 입력하세요.");
 				continue;
 			}
 		}
