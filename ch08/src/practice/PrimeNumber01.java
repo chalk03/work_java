@@ -8,7 +8,7 @@ public class PrimeNumber01 extends Thread {
 		this.end = end;
 	}
 
-	public void run() {
+	/*public void run() {
 		boolean b;
 		for (int i = 2; i <= this.end; i++) {
 			b = true;
@@ -21,7 +21,7 @@ public class PrimeNumber01 extends Thread {
 				System.out.print(i + " ");
 			}
 		}
-	}
+	}*/
 	
 	/*public void run() {
 		for(int i = 2; i<= this.end; i++) {
