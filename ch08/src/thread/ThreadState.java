@@ -34,7 +34,7 @@ public class ThreadState implements Runnable {
 		System.out.println("1 단계: " + th.getState());
 		th.start();
 		System.out.println("2 단계: " + th.getState());
-		Thread.sleep(120);
+		Thread.sleep(0);
 		th.interrupt();
 		System.out.println("3 단계: " + th.getState());
 		Thread.sleep(1000);

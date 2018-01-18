@@ -2,22 +2,36 @@ package practice;
 
 public class PrimeNumber01 extends Thread {
 
-	private int i;
+	private int end;
 
-	public PrimeNumber01(int i) {
-		this.i = i;
+	public PrimeNumber01(int end) {
+		this.end = end;
 	}
 
-	public void run() {
-		for (int i = 2; i <= 20; i++) {
+	/*public void run() {
+		boolean b;
+		for (int i = 2; i <= this.end; i++) {
+			b = true;
 			for (int j = 2; j < i; j++) {
 				if (i % j == 0) {
-
-				} else {
-					System.out.printf("%d ", i);
+					b = false;
 				}
 			}
-
+			if (b == true) {
+				System.out.print(i + " ");
+			}
+		}
+	}*/
+	
+	public void run() {
+		for(int i = 2; i<= this.end; i++) {
+			for(int j = 2; j <= i; j++) {
+				if(!(i == j) && i%j == 0)
+					break;
+				
+				if(i == j) 
+					System.out.printf("%4d",i);
+			}
 		}
 	}
 }
