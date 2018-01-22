@@ -1,6 +1,5 @@
 package com.koitt.java.board.dao;
 
-
 import java.util.List;
 import com.koitt.java.board.exception.BoardException;
 import com.koitt.java.board.model.Board;

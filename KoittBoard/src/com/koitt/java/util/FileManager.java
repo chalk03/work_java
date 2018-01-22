@@ -19,7 +19,7 @@ public class FileManager {
 	 * list: BoardDao에 있는 list 필드 
 	 * filename: list객체를 저장할 파일 이름
 	 */
-	public static void saveToFile(List<Board> list, String filename) {
+	public static<E> void saveToFile(List<E> list, String filename) {
 		ObjectOutputStream oos = null;
 		FileOutputStream fos = null;
 
@@ -44,7 +44,7 @@ public class FileManager {
 	 * filename : 게시글 리스트가 저장된 파일명
 	 * List<Board> : 파일에서 불러온 list 객체를 리턴
 	 */
-	public static<T> List<T> loadFromFile(String filename) {
+	public static<E> List<E> loadFromFile(String filename) {
 		ObjectInputStream ois = null;
 		FileInputStream fis = null;
 		Object list = null;
@@ -62,10 +62,10 @@ public class FileManager {
 				ois.close();
 				fis.close();
 
-				return (List<T>) list;
+				return (List<E>) list;
 			} else {
 				System.out.println("게시판이 없습니다.");
-				return new ArrayList<T>();
+				return new ArrayList<E>();
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
