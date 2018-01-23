@@ -1,10 +1,9 @@
 package inheritance.overloading;
 
 public class MyMath {
-
 	double x, y;
 	
-	public  MyMath(double x, double y) {
+	public MyMath(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -15,6 +14,8 @@ public class MyMath {
 	
 	public static double multiply(double a, double b) {
 		return a * b;
+		//return x * y;			// 오류발생
+		//return this.x * this.y;	// 오류발생
 	}
 	
 	public static void main(String[] args) {

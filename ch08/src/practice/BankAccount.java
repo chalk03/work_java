@@ -1,30 +1,37 @@
 package practice;
 
 public class BankAccount {
-
-	private int balance; // 최저잔금 저장할 필드
-
-	// 생성자
-	public BankAccount(int balance) {
-		this.balance = balance;
+	// 4.
+	private int minBalance;		// 최저잔금
+	private int balance;		// 잔금
+	
+	// 5.
+	public BankAccount(int minBalance) {
+		this.minBalance = minBalance;
 	}
-
-	// deposit(money) 입금메소드
+	
+	// 6.
 	public void deposit(int money) {
-		if (money < 0) {
-			System.out.println("입금 금액이 잘못됐습니다.");
-			return;
-		}
-		balance += money;
-		System.out.printf("정상 입금처리: 입금금액=%6d, 잔금=%6d %n", money, balance);
+		this.balance += money;
+		System.out.println("정상 입금처리: 입금금액=" + money + ", 잔금=" + this.balance);
 	}
-
-	// withdraw(money) 출금메소드
+	
+	// 7.							// 9.
 	public void withdraw(int money) throws InvalidWithdraw {
-		if (money > 0 && balance >= money) {
-			balance -= money;
-			System.out.printf("정상 출금처리: 인출금액=%6d, 잔금=%6d %n", money, balance);
+		// 8.
+		
+		// 요청 금액이 음수이거나
+		if (money < 0) {
+			throw new InvalidWithdraw("E01: 요청 금액이 음수 입니다.");
 		}
-		throw new InvalidWithdraw("초과출금 요구 예외");
+		// 최저 잔금 이하로 인출을 요청
+		else if (this.balance - money < this.minBalance) {
+			throw new InvalidWithdraw("초과출금 요구 예외");
+		}
+		
+		this.balance -= money;
+		System.out.println("정상 출금처리: 인출금액=" + money + ", 잔금=" + this.balance);
 	}
+	
+	
 }

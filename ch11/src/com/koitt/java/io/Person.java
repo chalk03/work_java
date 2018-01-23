@@ -2,14 +2,13 @@ package com.koitt.java.io;
 
 import java.io.Serializable;
 
-// Serialzable : 직렬화
-public class Person implements Serializable{
-
+							// 1. 직렬화
+public class Person implements Serializable {
 	private static final long serialVersionUID = 1L;	// 클래스의 버전
 	
-	private String name;
-	private String address;
-	private int age;
+	private String name;		// 이름
+	private String address;		// 주소
+	private int age;			// 나이
 	
 	public Person(String name, String address, int age) {
 		this.name = name;
@@ -29,9 +28,4 @@ public class Person implements Serializable{
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
-
 }

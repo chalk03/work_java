@@ -2,25 +2,30 @@ package practice;
 
 import java.util.Date;
 
+// 1.
 public class PrintTime implements Runnable {
 
-	private int end;
+	// 2.
+	private int count;
 
-	public PrintTime(int end) {
-		this.end = end;
+	// 3.
+	public PrintTime(int count) {
+		this.count = count;
 	}
 
+	// 4.
+	@Override
 	public void run() {
-		for (int i = 0; i < end; i++) {
+		for (int i = 0; i < this.count; i++) {
 			try {
 				Thread.sleep(1000);
-				Date date = new Date();
-				System.out.println("순위: " + Thread.currentThread().getPriority() + " " + date + " "
-						+ Thread.currentThread().getName());
-			} catch (InterruptedException e) {
-				e.printStackTrace();
 			}
-
+			catch (InterruptedException e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("순위: " + Thread.currentThread().getPriority()
+					+ new Date() + " " + Thread.currentThread().getName());
 		}
 	}
+
 }

@@ -1,25 +1,28 @@
 package obj.constructor;
 
 public class CreditCard {
-
-	public String owner;
-	private long number;
+	
+	public String owner; 	// 카드 소유자
+	private long number;	// 16자리 카드번호
 	
 	// 생성자 구현
-	// 생성자 오버로딩
+	// 생성자 오버로딩 (Constructor Overloading)
 	public CreditCard(String owner) {
 		this.owner = owner;
 	}
+	
 	public CreditCard(long number) {
 		this.number = number;
 	}
+	
 	public CreditCard(String owner, long number) {
 		this.owner = owner;
 		this.number = number;
 	}
 	
+	// getter
 	public long getNumber() {
-		return number;
+		return this.number;
 	}
 	
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package inheritance.overriding;
 
-public class Staff extends Faculty{
-
+public class Staff extends Faculty {
+	
 	public String division;
 	
 	public Staff(String name, long number, String univ, long idNumber, String division) {
@@ -11,13 +11,12 @@ public class Staff extends Faculty{
 	
 	@Override
 	public void printInfo() {
-		System.out.print("이름: " + super.name + "주민번호: " + super.getSNumber());
+		System.out.print("이름: " + super.name + " 주민번호: " + super.getSNumber());
 		System.out.print(" 대학: " + this.univ + " 직원번호: " + super.number);
 		System.out.println(" 부서: " + this.division);
 	}
 	
-
-	public void printFacultyInfo () {
+	public void printFacultyInfo() {
 		super.printInfo();
 	}
 	
@@ -31,5 +30,6 @@ public class Staff extends Faculty{
 		Staff he = new Staff("최영기", 1167429, "남도대학교", 1287, "기획처");
 		he.printInfo();
 		he.printFacultyInfo();
+		he.printInfoPerson();
 	}
 }

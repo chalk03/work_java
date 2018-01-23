@@ -6,11 +6,10 @@ import java.util.List;
 import java.util.Set;
 
 public class MyMap<K, V> {
-
-	private Set<K> keySet;	// key값들을 저장하는 Set
-	private List<K> keys;	// key값을 저장하는 배열
-	private List<V> values;	// values값을 저장하는 배열
-	private int size;			// 데이터의 개수
+	private Set<K> keySet;			// key 값들을 저장하는 Set
+	private List<K> keys;			// key값을 저장하는 배열
+	private List<V> values;			// value값을 저장하는 배열
+	private int size;				// 데이터의 개수
 	
 	public MyMap() {
 		keySet = new HashSet<K>();
@@ -19,7 +18,7 @@ public class MyMap<K, V> {
 	}
 	
 	public void put(K key, V value) {
-		for (int i = 0; i<keys.size(); i++) {
+		for (int i = 0; i < keys.size(); i++) {
 			// 이 조건이 맞으면 해당 key의 value를 수정
 			if (keys.get(i).equals(key)) {
 				values.set(i, value);
@@ -33,11 +32,12 @@ public class MyMap<K, V> {
 	}
 	
 	public V get(K key) {
-		for (int i = 0; i<keys.size(); i++) {
+		for (int i = 0; i < keys.size(); i++) {
 			if (keys.get(i).equals(key)) {
 				return values.get(i);
 			}
 		}
+		
 		return null;
 	}
 	
@@ -54,9 +54,12 @@ public class MyMap<K, V> {
 		
 		// Map에 저장된 Set(keySet)에서 순차적으로 key값을 가져온다.
 		for (String key : map.getKeySet()) {
-			//순차적으로 가져온 key 값을 이용해 map의 get 메소드를 이용하여 실제 value 값을 가져온다.
+			/*
+			 *  순차적으로 가져온 key 값을 이용해 map의 get 메소드를 이용하여
+			 *  실제 value 값을 가져온다.
+			 */
 			String value = map.get(key);
-			System.out.println(key + ": " + value);
+			System.out.println(key + " : " + value);
 		}
 	}
 }

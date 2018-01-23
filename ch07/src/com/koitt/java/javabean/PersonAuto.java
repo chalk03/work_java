@@ -1,20 +1,20 @@
 package com.koitt.java.javabean;
 
 public class PersonAuto {
-	
 	private String name;
 	private int age;
 	
 	// 1. 기본 생성자
 	public PersonAuto() {}
-	
-	// 2. 생성자( 모든 필드 초기화)
+
+	// 2. 생성자 (모든 필드 초기화) - Alt + Shift + S (Generate Constructor using field)
 	public PersonAuto(String name, int age) {
+		super();
 		this.name = name;
 		this.age = age;
 	}
 	
-	// 3. getter, setter
+	// 3. Getter, Setter 구현
 	public String getName() {
 		return name;
 	}
@@ -31,7 +31,7 @@ public class PersonAuto {
 		this.age = age;
 	}
 
-	// 4. equals, hashCode 자동완성
+	// 4. equals, hashCode 자동 완성 - Alt + Shift + S (Generate hashCode and equals)
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -62,21 +62,22 @@ public class PersonAuto {
 		if (age != other.age)
 			return false;
 		
-		// 6. this의 name이 null값일때
+		// 6. this의 name이 null 값일때
 		if (name == null) {
-			// 비교대상의 필드가 null이면 다른 객체로 판단
+			// 비교대상의 필드가 null이 아니면 다른 객체로 판단
 			if (other.name != null)
 				return false;
 		}
+		
 		// 7. name값이 다르면 다른 객체로 판단하여 결과를 리턴
 		else if (!name.equals(other.name))
 			return false;
 		
-		// 위 조건을 모두 만족을 안한다면 같은 객체로 판단
+		// 8. 위 조건 모두 만족을 안한다면 같은 객체로 판단
 		return true;
 	}
 	
-	// toString 자동완성 
+	// 5. toString 자동완성 (Alt + Shift + S - Generate toString)
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -90,14 +91,11 @@ public class PersonAuto {
 	
 	
 	public static void main(String[] args) {
-		PersonAuto p = new PersonAuto();
+		PersonAuto p = new PersonAuto("홍길동", 30);
 		System.out.println(p.getClass());
 		
 		// toString 사용
 		System.out.println(p);
 	}
-
-	
-
 	
 }

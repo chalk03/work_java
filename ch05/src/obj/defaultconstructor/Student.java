@@ -1,11 +1,15 @@
 package obj.defaultconstructor;
 
 public class Student {
+	
 	public String name;
 	
+	// 기본 생성자 구현
 	public Student() {
+		
 	}
 	
+	// 이름을 지정하는 생성자 구현
 	public Student(String name) {
 		this.name = name;
 	}
@@ -23,4 +27,3 @@ public class Student {
 		kim.print();
 	}
 }
-	

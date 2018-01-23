@@ -8,7 +8,6 @@ public class TestDrive {
 			object.call();
 			
 		} catch (ClassNotFoundException e) {
-
 			e.printStackTrace();
 		}
 		

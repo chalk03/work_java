@@ -1,7 +1,6 @@
 package inheritance.typecast;
 
 public class Faculty extends Person {
-	
 	public String univ;	// 소속대학
 	public long number;	// 사원번호
 	
@@ -12,6 +11,6 @@ public class Faculty extends Person {
 	}
 	
 	public long getSNumber() {
-		return super.number;
+		return super.number;	// 주민번호
 	}
 }

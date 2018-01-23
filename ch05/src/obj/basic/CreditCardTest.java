@@ -1,23 +1,22 @@
 package obj.basic;
 
 public class CreditCardTest {
-
+	
 	public static void main(String[] args) {
 		CreditCard yourCard = new CreditCard();
 		
-		
 		yourCard.owner = new String("이민정");
-		System.out.println("카드소유자: " + yourCard.owner);
+		
+		System.out.println(", 카드소유자: " + yourCard.owner);
 		yourCard.use(150000);
 		yourCard.use(100000);
 		yourCard.payBill(100000);
-		
 		
 		CreditCard myCard = new CreditCard();
 		myCard.owner = "이민정";
 		
 		// 주소값 비교
-		if(yourCard.owner == myCard.owner) {
+		if (yourCard.owner == myCard.owner) {
 			System.out.println("둘의 주소값은 같다.");
 		}
 		else {

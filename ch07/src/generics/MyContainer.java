@@ -1,10 +1,10 @@
 package generics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyContainer<E> {
-	
-	private ArrayList<E> list;
+	private List<E> list;
 	
 	public MyContainer() {
 		list = new ArrayList<E>();
@@ -22,18 +22,14 @@ public class MyContainer<E> {
 		MyContainer<String> p1 = new MyContainer<String>();
 		p1.add("algo1");
 		p1.add("C");
+		//p1.add(5); // 오류발생
 		p1.add("java");
 		System.out.println(p1.get(0) + " ");
 		System.out.println(p1.get(1) + " ");
 		System.out.println(p1.get(2) + " ");
 		
-		MyContainer<Double> p2 = new MyContainer<Double>();
-		p2.add(1.5);
-		p2.add(2.5);
-		p2.add(3.5);
-		System.out.println(p2.get(0) + " ");
-		System.out.println(p2.get(1) + " ");
-		System.out.println(p2.get(2) + " ");
+		MyContainer<Integer> p2 = new MyContainer<Integer>();
+		p2.add(20);
+		p2.add(10);
 	}
-
 }

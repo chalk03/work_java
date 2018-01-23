@@ -5,10 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListTest {
-
 	public static void main(String[] args) {
-		List<Object> list = new ArrayList<>();
-		//List<Object> list = new ArrayList<Object>();	// 기존버전에서 사용.
+		List<Object> list = new ArrayList<Object>();
 		
 		list.add(0.87);
 		list.add("algol");
@@ -28,14 +26,14 @@ public class ArrayListTest {
 		
 		System.out.println();
 		
-		for(int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size(); i++) {
 			Object e = list.get(i);
 			System.out.print(e + " ");
 		}
 	}
 
-	public  static void print(Iterator<Object> it) {
-		while ( it.hasNext()) {
+	public static void print(Iterator<Object> it) {
+		while (it.hasNext()) {
 			System.out.print(it.next() + " ");
 		}
 		System.out.println();

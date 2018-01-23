@@ -3,9 +3,7 @@ package array.basic;
 public class MultiDimArray {
 
 	public static void main(String[] args) {
-		int [][] mtrx;
-		
-		
+		int[][] mtrx;
 		mtrx = new int[2][3];
 		
 		mtrx[0][0] = 3;
@@ -15,10 +13,11 @@ public class MultiDimArray {
 		mtrx[1][1] = 2;
 		mtrx[1][2] = 8;
 		
-		for (int i=0; i< mtrx.length; i++) {
-			for ( int j=0; j < mtrx[i].length; j++)
+		for (int i = 0; i < mtrx.length; i++) {
+			for (int j = 0; j < mtrx[i].length; j++) {
 				System.out.print(mtrx[i][j] + " ");
-			System.out.println();
 			}
+			System.out.println();
 		}
 	}
+}

@@ -1,25 +1,23 @@
 package obj.constructor;
 
 public class Account {
-
+	
 	public String owner;
 	public long balance;
-
+	
+	// 생성자 구현
+	public Account(String owner) {
+		this.owner = owner;
+	}
+	
 	public Account(long balance) {
-		super();
 		this.balance = balance;
 	}
-
-	public Account(String owner) {
-		super();
-		this.owner = owner;
-	}
-
+	
 	public Account(String owner, long balance) {
-		super();
 		
-		//this: Account의 객체, this: 자기자신, super; 부모
-		this.owner = owner;
+		// this: Account의 객체, this: 자기자신, super: 부모
+		this(owner);
 		//this(balance);
 		//this.owner = owner;
 		this.balance = balance;
@@ -35,6 +33,4 @@ public class Account {
 		System.out.printf("act2: %s %d %n", act2.owner, act2.balance);
 		System.out.printf("act3: %s %d %n", act3.owner, act3.balance);
 	}
-	
-	
 }

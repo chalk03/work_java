@@ -1,25 +1,62 @@
 package practice;
 
+// 1.
 public class PrimeNumber02 extends Thread {
-
-	private int end;
-
-	public PrimeNumber02(int end, String name) {
-		this.end = end;
-		setName(name);
+	
+	// 3.
+	private int limit;
+	
+	// 4.							// 2.
+	public PrimeNumber02(int limit, String name) {
+		// 3.
+		//this.setName(name);	// setter를 이용한 스레드 이름 변경
+		super(name);			// 부모의 생성자를 이용하여 스레드 이름 변경
+		this.limit = limit;
 	}
 
+	@Override
 	public void run() {
-		System.out.println(getName());
+		// 4.
+		System.out.println(Thread.currentThread().getName() + ":");
+		
+		// 2. 4장 프로그래밍 연습문제 9번 코드 활용
+		
+		int[] prime = new int[this.limit + 1]; // [0] ~ [this.limit] 만들기 위해서
 
-		for (int i = 2; i <= this.end; i++) {
-			for (int j = 2; j <= i; j++) {
-				if (!(i == j) && i % j == 0) {
-					break;
+		// 0으로 초기화
+		for (int i = 0; i < prime.length; i++) {
+			prime[i] = 0;
+		}
+
+		// prime[2] 부터 prime[this.limit]까지 1을 대입
+		for (int i = 2; i < prime.length; i++) {
+			prime[i] = 1;
+		}
+
+		// 에라토스테네스의 체 알고리즘 적용
+		int limit = (int) Math.sqrt(this.limit);	// Math.sqrt() 메소드는 제곱근
+
+		// i: i의 배수
+		for (int i = 2; i <= limit; i++) {
+			if (prime[i] == 1) {
+				for (int j = 2 * i; j <= this.limit; j++) {
+					if (j % i == 0) {
+						prime[j] = 0;
+					}
 				}
-				if (i == j) {
-					System.out.printf("%4d", i);
-				}
+			}
+		}
+
+		int count = 0;
+		for (int i = 2; i <= this.limit; i++) {
+			if (prime[i] == 1) {
+				System.out.printf("%4d ", i);
+				count++;
+			}
+
+			if (count == 20) {
+				System.out.println();
+				count = 0;
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 package obj.setter;
 
 public class CreditCardTest {
-
+	
 	public static void main(String[] args) {
 		CreditCard parkCard = new CreditCard();
 		CreditCard leeCard = new CreditCard();
@@ -15,11 +15,15 @@ public class CreditCardTest {
 		leeCard.use(15000);
 		parkCard.payBill(50000);
 		leeCard.payBill(10000);
+		
 		System.out.println(parkCard.owner + ": " + parkCard.getNumber());
 		System.out.println("카드대금 잔액: " + parkCard.getBalance());
 		System.out.println("카드포인트: " + parkCard.getPoint());
 		System.out.println(leeCard.owner + ": " + leeCard.getNumber());
 		System.out.println("카드대금 잔액: " + leeCard.getBalance());
 		System.out.println("카드포인트: " + leeCard.getPoint());
+		
+		// 맨 마지막에 출력되는 것이 정상 (이클립스 버그)
+		leeCard.setNumber(0);
 	}
 }

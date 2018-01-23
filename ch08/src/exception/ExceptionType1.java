@@ -1,10 +1,9 @@
 package exception;
 
 public class ExceptionType1 {
-
-	static int num[];		// 초기화를 하지 않았음.
+	static int[] num;
 	
 	public static void main(String[] args) {
-		System.out.println(num.length);			// 예외발생
+		System.out.println(num.length);	// 예외 발생
 	}
 }

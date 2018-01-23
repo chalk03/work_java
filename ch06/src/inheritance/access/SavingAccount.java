@@ -1,9 +1,9 @@
 package inheritance.access;
 
-public class SavingAccount extends Account{
+public class SavingAccount extends Account {
 	
-	public double rates;
-
+	public double rates;	// 이자율
+	
 	public SavingAccount(String name, int number, double rates) {
 		super(name, number);
 		this.rates = rates;
@@ -14,9 +14,10 @@ public class SavingAccount extends Account{
 		myAccount.deposit(400000);
 		myAccount.withdraw(50000);
 		myAccount.checkBalance();
-	
-		System.out.println(myAccount.name);
-		System.out.println(myAccount.open);
-		System.out.println(myAccount.number);
+		
+		System.out.println(myAccount.name);			// 접근 가능
+		System.out.println(myAccount.open);			// 접근 가능
+		System.out.println(myAccount.number);		// 접근 가능
+		//System.out.println(myAccount.balance);	// 접근 불가
 	}
 }
