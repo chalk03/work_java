@@ -1,29 +1,30 @@
-package programming.exercise;
+package programming.course;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class SelectDeptTable {
+public class SelectCourseTable {
 
 	public static void main(String[] args) {
 		try {
 			String driverName = "org.gjt.mm.mysql.Driver";
 			String DBName = "univ";
 			String dbURL = "jdbc:mysql://localhost:3306/" + DBName;
-			String SQL = "SELECT * FROM department";
+			String SQL = "SELECT * FROM course";
 
 			Class.forName(driverName);
 			Connection con = DriverManager.getConnection(dbURL, "root", "koitt");
 			Statement stmt = con.createStatement();
+
 			ResultSet result = stmt.executeQuery(SQL);
-			
+			System.out.println("---- 테이블 course 내용 조회 ----");
 			while (result.next()) {
-				System.out.printf("%2d " , result.getInt(1));
-				System.out.printf("%6s " , result.getString(2));
-				System.out.printf("%8d " ,result.getInt(3));
-				System.out.println();
+				System.out.print(result.getInt(1) + "\t");
+				System.out.print(result.getString(2) + "\t");
+				System.out.print(result.getString(3) + "\t");
+				System.out.println(result.getInt(4) + "\t");
 			}
 			con.close();
 		} catch (Exception e) {
