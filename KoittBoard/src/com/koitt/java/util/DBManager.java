@@ -86,8 +86,11 @@ public class DBManager {
 		conn = DriverManager.getConnection(URL + "/" + DB_NAME, ID, PASSWORD);
 
 		// 2. SQL문 작성
-		String sql = ("DELETE FROM board WHERE no = ?;");
-
+		String sql = "DELETE FROM board WHERE no = ?";
+		
+		/*StringBuilder sql = new StringBuilder();
+		sql.append("DELETE FROM board WHERE no = ?");
+*/
 		// 3. SQL문 실행을 위한 객체 생성
 		pstmt = conn.prepareStatement(sql);
 
@@ -106,15 +109,15 @@ public class DBManager {
 		conn = DriverManager.getConnection(URL + "/" + DB_NAME, ID, PASSWORD);
 
 		// 2. SQL문 작성
-		String sql = ("UPDATE FROM board WHERE no = ?;");
+		String sql = ("UPDATE board set title = ?, content = ? WHERE no = ?");
 
 		// 3. SQL문 실행을 위한 객체 생성
 		pstmt = conn.prepareStatement(sql);
 
 		// 4. SQL문 물음표 채우기
-		pstmt.setInt(1, board.getId());
 		pstmt.setString(1, board.getTitle());
 		pstmt.setString(2, board.getContent());
+		pstmt.setInt(3, board.getId());
 
 		// 5. SQL문 변경된사항 업데이트
 		pstmt.executeUpdate();

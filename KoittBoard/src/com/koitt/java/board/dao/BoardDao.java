@@ -19,24 +19,33 @@ public class BoardDao {
 	}
 
 	public void delete(Board board) throws BoardException, SQLException {
-		DBManager.getInstance().delete(board);
-		System.out.println("글이 정상적으로 삭제 되었습니다.");
-		
-		/*for (Board item : DBManager.getInstance().selectAll()) {
-			if (item.equals(board)) {
-				
-			}
+		boolean exist = isExist(board);
+
+		if (exist) {
+			DBManager.getInstance().delete(board);
+		} else {
+			throw new BoardException("E02: 삭제할 게시글이 존재하지 않습니다.");
 		}
-		throw new BoardException("E02: 삭제할 게시글이 존재하지 않습니다.");*/
 	}
 
-	public void update(Board board) throws BoardException {
+	public void update(Board board) throws BoardException, SQLException {
+		boolean exist = isExist(board);
 
-		throw new BoardException("E03: 수정할 게시글이 존재하지 않습니다.");
+		if (exist) {
+			DBManager.getInstance().update(board);
+		} else {
+			throw new BoardException("E03: 수정할 게시글이 존재하지 않습니다.");
+		}
 	}
 
 	// 1. 해당 글이 존재하는지 여부 확인 메소드
-	public boolean isExist(Board board) {
+	public boolean isExist(Board board) throws SQLException {
+		List<Board> list = DBManager.getInstance().selectAll();
+		for (Board item : list) {
+			if (item.equals(board)) {
+				return true;
+			}
+		}
 		return false; // 다 찾아봤는데 없어서 false 리턴
 	}
 }
